@@ -1,0 +1,203 @@
+<div class="container">
+
+    <div class="row" [hidden]="submitted">
+        <div class="col-12 col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <p class="l2">Learner Profile</p>
+                </div>
+                <div class="card-body">
+                    <div class="register-form">
+                        <form [formGroup]="learnersForm" (ngSubmit)="onSubmit()">
+
+                            <div class="form_input">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput id="learner_name" formControlName="learner_name" name="learner_name" type="text" placeholder="Student name">
+                                    <mat-error *ngIf="learnersForm.controls.learner_name.invalid && (learnersForm.controls.learner_name.dirty || learnersForm.controls.learner_name.touched)">
+                                        Please enter valid name, and required.
+                                        <mat-error *ngIf="learnersForm.controls.learner_name.errors.minlength">
+                                            Name must be at least 1 characters long.
+                                        </mat-error>
+                                        <mat-error *ngIf="learnersForm.controls.learner_name.errors.maxlength">
+                                            Name must be at least 50 characters short.
+                                        </mat-error>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="form_input">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput [min]="minDOB" [max]="maxDOB" [matDatepicker]="picker" formControlName="learner_DOB" placeholder="Your Date of Birth (DD/MM/YYYY)">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+
+                                    <mat-error *ngIf="learnersForm.controls.learner_DOB.errors?.required">Date of birth is required
+                                    </mat-error>
+                                    <!-- <mat-error *ngIf="appForm.controls.DOB.errors?.dFormat">Date of birth should be in MM/DD/YYYY format.</mat-error> -->
+                                    <mat-error *ngIf="learnersForm.controls.learner_DOB.errors?.mindob">Year of birth year can not be earlier than 1930.
+                                    </mat-error>
+                                    <mat-error *ngIf="learnersForm.controls.learner_DOB.errors?.maxdob">Year of birth year can not be later than 2020.
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="form_input">
+                                <mat-form-field class="example-full-width">
+                                    <mat-select type="text" id="subject" formControlName="subject" placeholder="Your subjects">
+                                        <mat-option disabled value="">---Please select a main subject---</mat-option>
+                                        <mat-option *ngFor="let item of subject_list" [value]="item">{{item}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+
+                            </div>
+
+                            <div class="form_input">
+                                <mat-form-field class="example-full-width">
+                                    <!-- <mat-select placeholder="curriculum" [formControlName]="curriculum" multiple>
+                    <mat-option *ngFor="let curriculum of curriculum_list" [value]="curriculum">{{curriculum}}
+                    </mat-option>
+                  </mat-select> -->
+                                    <mat-select type="text" id="curriculum" formControlName="curriculum" placeholder="Your curriculums">
+                                        <mat-option disabled value="">-&#45;&#45;Please select a main curriculum-&#45;&#45;</mat-option>
+                                        <mat-option *ngFor="let item of curriculum_list" [value]="item">{{item}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <!--<angular2-multiselect [data]="temp_ist"-->
+                                <!--formControlName="curriculum">-->
+                                <!--</angular2-multiselect>-->
+                            </div>
+
+
+                            <div class="form_input">
+                                <mat-form-field class="example-full-width">
+                                    <textarea matInput #aspirations formControlName="aspiration" placeholder="Your aspirations"></textarea>
+                                    <mat-hint align="end">{{aspirations.value?.length || 0}}/50</mat-hint>
+
+                                    <mat-error *ngIf="learnersForm.controls.aspiration.invalid && (learnersForm.controls.aspiration.dirty || learnersForm.controls.aspiration.touched)">
+                                        <mat-error *ngIf="learnersForm.controls.aspiration.errors.required">
+                                            Your aspirations is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="learnersForm.controls.aspiration.errors.minlength">
+                                            Your aspirations must be at least 1 characters long.
+                                        </mat-error>
+                                        <mat-error *ngIf="learnersForm.controls.aspiration.errors.maxlength">
+                                            Your aspirations must be at least 50 characters short.
+                                        </mat-error>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="form_input">
+                                <mat-form-field class="example-full-width">
+                                    <textarea matInput #input formControlName="sp_need" placeholder="Your special Request"></textarea>
+                                    <mat-hint align="end">{{input.value?.length || 0}}/50</mat-hint>
+
+                                    <mat-error *ngIf="learnersForm.controls.sp_need.invalid && (learnersForm.controls.sp_need.dirty || learnersForm.controls.sp_need.touched)">
+                                        <mat-error *ngIf="learnersForm.controls.sp_need.errors.required">
+                                            Special Request is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="learnersForm.controls.sp_need.errors.minlength">
+                                            Special Request must be at least 1 characters long.
+                                        </mat-error>
+                                        <mat-error *ngIf="learnersForm.controls.sp_need.errors.maxlength">
+                                            Special Request must be at least 50 characters short.
+                                        </mat-error>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <!--<div class="form_input">-->
+                            <!--<mat-form-field>-->
+                            <!--<mat-select placeholder="learner_info" [formControl]="learner_info" multiple>-->
+                            <!--<mat-option *ngFor="let info of currentlearner.learner_info" [value]="info">{{info}}</mat-option>-->
+                            <!--</mat-select>-->
+                            <!--</mat-form-field>-->
+                            <!--</div>-->
+                            <button type="submit" class="btn btn-primary" [disabled]="learnersForm.invalid">Submit</button>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-sm-none d-md-none d-lg-block col-lg-4">
+            <div class="card">
+                abc
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row" [hidden]="!submitted">
+        <div class="col-12 col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="l1">You submitted the following:</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form_input">
+                        <div class="submitted_row">
+                            <div class="col-xs-3">Name:</div> &nbsp;&nbsp;
+                            <div class="col-xs-9  pull-left">{{ learnersForm.value.learner_name }}</div>
+                        </div>
+
+                    </div>
+
+                    <mat-divider></mat-divider>
+
+                    <div class="form_input">
+                        <div class="submitted_row">
+                            <div class="col-xs-3">Date Of Birth:</div>&nbsp;&nbsp;
+                            <div class="col-xs-9 pull-left">{{ learnersForm.value.learner_DOB }}</div>
+                        </div>
+                    </div>
+
+                    <mat-divider></mat-divider>
+
+                    <div class="form_input">
+                        <div class="submitted_row">
+                            <div class="col-xs-3">subject:</div>&nbsp;&nbsp;
+                            <div class="col-xs-9 pull-left">{{ learnersForm.value.subject }}</div>
+                        </div>
+                    </div>
+
+                    <mat-divider></mat-divider>
+
+                    <div class="form_input">
+                        <div class="submitted_row">
+                            <div class="col-xs-3">curriculums:</div>&nbsp;&nbsp;
+                            <div class="col-xs-9 pull-left">{{ learnersForm.value.curriculum }}</div>
+                        </div>
+                    </div>
+
+                    <mat-divider></mat-divider>
+
+                    <div class="form_input">
+                        <div class="submitted_row">
+                            <div class="col-xs-3">Aspirations:</div>&nbsp;&nbsp;
+                            <div class="col-xs-9 pull-left">{{ learnersForm.value.aspiration }}</div>
+                        </div>
+                    </div>
+
+                    <mat-divider></mat-divider>
+
+                    <div class="form_input">
+                        <div class="submitted_row">
+                            <div class="col-xs-3">subject:</div>&nbsp;&nbsp;
+                            <div class="col-xs-9 pull-left">{{ learnersForm.value.sp_need }}</div>
+                        </div>
+                    </div>
+
+                    <mat-divider></mat-divider>
+                    <button class="btn btn_blue" (click)="submitted=false">Edit</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- container -->

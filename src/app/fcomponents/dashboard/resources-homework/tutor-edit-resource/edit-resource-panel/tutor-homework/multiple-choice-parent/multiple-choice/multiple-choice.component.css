@@ -1,0 +1,227 @@
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 10px;
+}
+
+.example-full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.a{
+  justify-content:center;
+}
+label{
+  padding:0;
+}
+
+.row{
+  margin:0;
+}
+
+
+.form-group {margin-bottom:1px;}
+
+.ns{
+  background-color: #f2dede;
+}
+
+
+.saved-quiz-text{
+  margin: 12px;
+  border-radius: 5px;
+}
+
+.saved-quiz-title{
+  color:grey;
+}
+
+.saved-question{
+  padding: 10px;
+}
+
+.s-color{
+  fill: #000;
+}
+
+
+.pos-btn {
+  padding: 3px;
+  text-align: right;
+}
+
+.pos-btn button {
+  margin-right: 5px;
+}
+
+.container{
+  padding:0;
+}
+label{
+  width:100%;
+}
+.col{
+  padding:0;
+}
+
+.options{
+  margin-top:3px;
+  margin-bottom:3px;
+  padding-left: 10px;
+}
+
+.question-col{
+  margin-left:5px;
+  margin-right:5px;
+  padding:0;
+}
+.optionrow{
+  padding-left:30px;
+}
+
+.form-btn-div {
+  padding: 2px;
+  text-align: right;
+}
+
+.form-btn-div button {
+  margin-left: 0.5rem;
+}
+
+.checkbox-input{
+  width:90%;
+}
+@media only screen and (max-width: 576px){
+  .checkbox-input{
+    width:80%;
+  }
+  .option-btn button{
+    padding:0 8px;
+  }
+}
+
+@media only screen and (max-width: 365px){
+  .checkbox-input{
+    width:80%;
+  }
+  .option-btn button{
+    padding:0 4px;
+  }
+}
+
+.bottomButton{
+  position: absolute;
+  margin-left: auto;
+margin-right: auto;
+left: 40%;
+}
+
+.qtext{
+  word-wrap:break-word;
+}
+
+
+
+
+
+
+.saved-quiz {
+  /* margin-top: 0.5rem;
+  margin-bottom: 0.5rem; */
+  /* margin-left: 0.3rem;
+  margin-right: 0.3rem; */
+}
+
+.saved-quiz-header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.saved-quiz-title {
+  color:grey;
+}
+
+.saved-quiz-text{
+  margin: 12px;
+  border-radius: 5px;
+}
+
+.saved-quiz-ans {
+  padding: 2px;
+  padding-left:30px;
+}
+
+.saved-quiz-ans a {
+  font-weight: bold;
+  color: #32CD32;
+}
+
+.ans-div {
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.ans-div a {
+  font-weight: bold;
+}
+
+.answer-btn-div {
+  margin-top: 0.5rem;
+  padding: 2px;
+  text-align: right;
+}
+
+.display-answer-div {
+  padding: 2px;
+}
+
+.display-answer-div a {
+  font-weight: bold;
+  color: #32CD32;
+}
+
+.form-btn-div {
+  padding: 2px;
+  text-align: right;
+}
+
+.form-btn-div button {
+  margin-left: 0.5rem;
+}
+
+.saved-title {
+  background-color: #DCDCDC;
+}
+
+.pos-btn {
+  padding: 3px;
+  text-align: right;
+}
+
+.pos-btn button {
+  margin-right: 5px;
+}
+
+.btn-edit-option {
+  padding: 3px;
+}
+
+.btn-edit-option button {
+  margin-right: 3px;
+}
+
+.styled-btn {
+  font-size: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 2px;
+}
+
+.styled-btn i {
+  margin-right: 2px;
+  margin-top: -4px;
+}

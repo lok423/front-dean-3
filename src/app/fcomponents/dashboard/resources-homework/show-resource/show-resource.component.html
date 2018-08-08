@@ -1,0 +1,122 @@
+<div class="container">
+  <div *ngIf="resource">
+    <div class="row main">
+      <div class="col-xl-8 col-lg-8 col-12">
+        <div class="row">
+          <div class="col-lg-12 col-sm-12 col-style">
+            <h2>{{resource.resource_title}}</h2>
+            <hr>
+            <div class="row">
+<div class="col-10">
+  <div class="">
+  <strong>Subject </strong>{{resource.resource_subject}}&nbsp;|&nbsp;<strong>Grade </strong>{{resource.resource_grade}}
+  </div>
+  <div class="float-left" style="width:100%;"><strong>{{numOfQuestion}} Questions</strong>&nbsp;|&nbsp;
+    <strong>Last updated </strong>{{resource.updated_at}}&nbsp;|&nbsp;
+    <div style="display: inline-block;" *ngIf="resourcePrivacy == 1" >
+    <span class="badge badge-success ">Public</span>
+  </div>
+  <div style="display: inline-block;" *ngIf="resourcePrivacy == 0" >
+    <span class="badge badge-danger ">Private</span>
+  </div>
+
+  </div>
+
+</div>
+
+            <div class="col-2 float-left">
+                <div class="row">
+
+                    <img class="rounded_image_class" [src]="prepareAuthorImage(resourceOwnerId)" />
+                    <span class="m2">{{resource.resource_author}}</span>
+              </div>
+            </div>
+            </div>
+            <hr>
+
+
+          </div>
+
+
+
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="row">
+
+              <!--
+              <div class="col-lg-7 col-md-7 col-sm-12 detail_class" id="detail_info">
+                <div class="resource_detail_class">
+                  <p class="detail_value_font_class common_detail_font_class">{{resource.resource_subject}}</p>
+                  <p class="common_detail_font_class detail_content_space">Subject</p>
+                </div>
+                <div class="resource_detail_class div2">
+                  <p class="detail_value_font_class common_detail_font_class">{{resource.resource_grade}}</p>
+                  <p class="common_detail_font_class detail_content_space">Grade</p>
+                </div>
+              </div>-->
+            </div>
+            <div class="row">
+              <div class="d-flex flex-column desc">
+                <p class="m2 resource_desc_class">Description: </p>
+                <p class="s1 resource_desc">
+                  {{resource.resource_des}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 resource_info3">
+            <img class="pic_show" [src]="resourceImage" />
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="row main">
+      <div class="col-xl-8 col-lg-8 col-12 col-style">
+        <div *ngIf="resourceType == 'homework'; then homework; else other"></div>
+        <div *ngIf="viewerType == 'tutor'">
+          <div id="func-btn" class="d-flex">
+            <div class="mr-auto">
+              <button mat-stroked-button *ngIf="isOwner" type="button" class="btn btn-outline-success" (click)="editResource()">Edit</button>
+              <button mat-stroked-button *ngIf="isOwner" type="button" class="btn btn-danger" (click)="assignResources()">Assign</button>
+
+            </div>
+            <div>
+              <button mat-raised-button type="button" class="btn btn-primary" (click)="goBack()">Back</button>
+            </div>
+
+          </div>
+        </div>
+        <div *ngIf="viewerType == 'learner'">
+          <button mat-raised-button type="button" class="btn btn-primary" (click)="goBack()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #homework>
+  <div class="row">
+    <div class="col-12 col-style">
+      <div *ngIf="resourceContent.questionType == 'short'">
+        <app-short-answers-parent [questionData]="resourceContent.questionCollection">
+        </app-short-answers-parent>
+        </div>
+      <div *ngIf="resourceContent.questionType == 'multi'">
+        <app-multiple-choice-parent [questionData]="resourceContent.questionCollection">
+        </app-multiple-choice-parent>
+      </div>
+      <div *ngIf="resourceContent.questionType == 'blank'">
+        <app-fill-blank-parent [questionData]="resourceContent.questionCollection">
+        </app-fill-blank-parent>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #other>
+  <h4>Other Resources</h4>
+</ng-template>

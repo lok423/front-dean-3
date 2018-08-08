@@ -1,0 +1,93 @@
+<div class="container-fluid" id="ContentBody">
+<div class="card text-center" id="LookingCourse">
+	<div class="card-header col-12">Which course are you looking for?</div>
+</div>
+
+<div class="card col-12" >
+	<div class="card-body col-12 col-lg-6 col-md-10 offset-lg-3 offset-md-1 offset-0.000000001">
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<button type="button" class="btn btn-outline-primary col-7 col-md-7" (click)="showHighCourse()">High School Courses</button>
+			<button type="button" class="btn btn-outline-success col-5 col-md-12"(click)="showUniCourse()">Uni Courses</button>
+			<!-- button group used to control display high school courses and uni courses -->
+		</div>
+			<ng-template [ngIf]="highCourse">
+			<!-- Content of high school courses -->
+			<div class="col-12 tableAni">
+				<div class="row justify-content-around">
+					<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/math.png"/><a routerLink="app/find-tutor/Maths">Math</a><span class="badge badge-success yearIcons">Y 7-13</span></div>
+					<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/english.png"/><a routerLink="app/find-tutor/English">English</a><span class="badge badge-success yearIcons">Y 7-13</span></div>
+				</div>
+				<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/science.png"/><a routerLink="app/find-tutor">Science</a><span class="badge badge-success yearIcons">Y 7-13</span></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/calculus.png"/><a routerLink="app/find-tutor">Calculus</a><span class="badge badge-success yearIcons">Y 12-13</span></div>
+				</div>
+				<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/chemistry.jpg"/><a routerLink="app/find-tutor/Chemistry">Chemistry</a><span class="badge badge-success yearIcons">Y 10-13</span></div>
+						<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/physics2.png"/><a routerLink="app/find-tutor/Physics">Physics</a><span class="badge badge-success yearIcons">Y 10-13</span></div>
+				</div>
+				<div class="row justify-content-around">
+						<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/biology.png"/><a routerLink="app/find-tutor/Bio">Biology</a><span class="badge badge-success yearIcons">Y 10-13</span></div>
+						<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/economy.png"/><a routerLink="app/find-tutor/Economics">Economics</a><span class="badge badge-success yearIcons">Y 9-13</span></div>
+				</div>
+					<div class="row justify-content-around">
+							<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/accounting.png"/><a routerLink="app/find-tutor/Accounting" >Accounting</a><span class="badge badge-success yearIcons">Y 9-13</span></div>
+							<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/german.png"/><a routerLink="app/find-tutor">German</a></div>
+					</div>
+					<div class="row justify-content-around">
+						 <div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/chinese.png"/><a routerLink="app/find-tutor">Chinese</a></div>
+							<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/maori.png"/><a routerLink="app/find-tutor">Maori</a></div>
+					</div>
+					<div class="row justify-content-around">
+							<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/spanish.png"/><a routerLink="app/find-tutor">Spanish</a></div>
+							<div class="col-12 col-md-4 col-lg-6 col-xl-4 TabHover"><img src="assets/img/french.png"/><a routerLink="app/find-tutor">French</a></div>
+					</div>
+			</div>
+		</ng-template>
+
+
+			<ng-template [ngIf]="uniCourse">
+				<!-- content of university courses -->
+			<div  class="col-12 tableAni">
+					<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/accounting.png"/><a routerLink="app/find-tutor/Accounting">Accounting</a></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/biology.png"/><a routerLink="app/find-tutor/Bio">Biology</a></div>
+				</div>
+					<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/chemistry.jpg"/><a routerLink="app/find-tutor/Chemistry">Chemistry</a></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/cs.png"/><a routerLink="app/find-tutor">Computer</a></div>
+				</div>
+					<div class="row justify-content-around">
+					<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/economy.png"/><a routerLink="app/find-tutor/Economics">Economics</a></div>
+					<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/engineering.svg"/><a routerLink="app/find-tutor">Engineering</a></div>
+				</div>
+					<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/english.png"/><a routerLink="app/find-tutor">English</a></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/finance.png"/><a routerLink="app/find-tutor">Finance</a></div>
+				</div>
+				<div class="row justify-content-around">
+					<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/german.png"/><a routerLink="app/find-tutor">German</a></div>
+					<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/history.png"/><a routerLink="app/find-tutor">History</a></div>
+				</div>
+					<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"> <img src="assets/img/marketing.png"/><a routerLink="app/find-tutor">Marketing</a></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/math.png"/><a routerLink="app/find-tutor/Maths">Math</a></div>
+					</div>
+					<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"> <img src="assets/img/medicine.png"/><a routerLink="app/find-tutor">MedicalTech</a></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/physics2.png"/><a routerLink="app/find-tutor/Physics">Physics</a></div>
+				</div>
+					<div class="row justify-content-around">
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/psychology.png"/><a routerLink="app/find-tutor">Psychology</a></div>
+						<div class="col-12 col-md-4  col-lg-6 col-xl-4 TabHover"><img src="assets/img/spanish.png"/><a routerLink="app/find-tutor">Spanish</a></div>
+				</div>
+			</div>
+		</ng-template>
+		</div>
+
+</div>
+
+	<div id="ApplyTeach">
+		<a>Apply to teach</a><img src="assets/img/rightarrow.png"/>
+	</div>
+
+</div>

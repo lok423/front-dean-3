@@ -1,0 +1,169 @@
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+.row{
+  display: -webkit-box;
+  margin-right: 0;
+  margin-left: 0;
+  width: 100%;
+}
+
+
+/* column gaps */
+#gaplg_1{
+  padding-left: 0;
+}
+#gaplg_11{
+  padding-left: 2.5rem;
+  padding-right: 0;
+}
+#gaplg_6{
+  padding-right: 0;
+}
+
+
+
+/* navbar content */
+.navbar{
+  background-color: white;
+  border: 1px solid #cccccc;
+  z-index:1 ;
+}
+.navbar .logo{
+  color: #0099FF;
+  font-size:21px;
+  padding-bottom: 0.5rem;
+  font-family: Arial;
+  max-width: 0;
+}
+.navbar-nav .nav-item .navLink{
+  color:#0099FF;
+  font-size: 16px;
+}
+.navbar-nav .nav-item .navLink:hover{
+  color:#0099FF;
+}
+.navbar-nav .nav-item .navRight{
+  margin-left: 5px;
+}
+
+
+/* dropdown content */
+.dropdown-item{
+  font-size:15px;
+  font-weight:bold;
+}
+.dropdown-item:hover{
+  background-color: lightgrey;
+}
+
+
+/* styles about cursor.  */
+.pointer {
+  cursor: pointer;
+}
+
+
+/* icons content */
+.homeIcon{
+  background-image: url("/../../assets/icons/homeIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.teachingIcon{
+  background-image: url("/../../assets/icons/teachingIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.settingIcon{
+  background-image: url("/../../assets/icons/settingIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.transactionIcon{
+  background-image: url("/../../assets/icons/transactionIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.passdIcon{
+  background-image: url("/../../assets/icons/passdIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.logoutIcon{
+  background-image: url("/../../assets/icons/logout.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.articleIcon{
+  background-image: url("/../../assets/icons/articleIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.discussionIcon{
+  background-image: url("/../../assets/icons/discussionIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.editIcon{
+  background-image: url("/../../assets/icons/edit.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.paymentIcon{
+  background-image: url("/../../assets/icons/paymentIcon.png");
+  background-position: left center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+
+
+@media (max-width: 575px) {
+  #gaplg_1{
+    width: 10%;
+  }
+  #toggleBtn{
+    width: 15%;
+  }
+}
+
+@media(max-width:767px){
+  .row{
+    display: block;
+  }
+  .float-right{
+    float: none !important;
+    margin-right: 0px;
+  }
+  .dropdown-menu{
+    max-width: 98%;
+    border:0px;
+    outline:0px;
+  }
+  .dpitem{
+    margin-top: -10px;
+  }
+  #toggleBtn{
+    padding-left: 0;
+  }
+  #gaplg_11{
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #toggleBtn{
+    display: none;
+  }
+}

@@ -1,0 +1,44 @@
+.type-selector {
+
+}
+
+.type-selector button {
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+#navbar {
+  /* padding: 0; */
+  margin-left: -15px;
+  margin-right: -15px;
+  background-color:lightgrey;
+  border-radius: 10px;
+}
+
+.nav-link{
+  border:none;
+}
+a:hover {background-color: #f1f1f1}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+@media only screen and (max-width: 576px){
+  .container{
+    padding:0px;
+  }
+
+  .pageTitle{
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .navbar-brand{
+    font-size: 15px;
+  }
+
+  .nav-item{
+    font-size: 12px;
+  }
+}
